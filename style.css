@@ -7,7 +7,11 @@ body {
 }
 
 #nauti-map {
-  width: 600px;
-  height: 400px;
+  width: 1000px;
+  height: 800px;
   background-color: pink;
+}
+
+.yNHHyP-marker-view img {
+  height: 35px;
 }

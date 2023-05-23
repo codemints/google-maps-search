@@ -36,9 +36,9 @@ const locations = [
       state: 'FL',
       zip: '34135'
     },
-    lat: 26.3310293,
-    lng: -81.8044098,
-    dir: 'https://www.google.com/maps/place/Bonita+Beach+Balloon+Bar+%26+Grill/@26.3310293,-81.8044098,17z/data=!3m1!4b1!4m6!3m5!1s0x88db19f4b8834271:0x9c23759de6963918!8m2!3d26.3310245!4d-81.8018349!16s%2Fg%2F11f662k_vw'
+    lat: 26.3310245,
+    lng: -81.8018349,
+    dir: 'https://www.google.com/maps/dir//Bonita+Beach+Balloon+Bar+%26+Grill,+9070+Bonita+Beach+Rd+SE,+Bonita+Springs,+FL+34135/@26.3310245,-81.8018349,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x88db19f4b8834271:0x9c23759de6963918!2m2!1d-81.8018342!2d26.3309687!3e0'
   },
   {
     name: "Johnny Malloy's Sports Pub",
@@ -204,9 +204,9 @@ const locations = [
       state: 'FL',
       zip: '33034'
     },
-    lat: 25.4430353,
-    lng: -80.478093,
-    dir: 'https://www.google.com/maps/place/Best+Buy+Liquors/@25.4430353,-80.478093,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9e0b5c3ca4a81:0xd9dcaec1fa005744!8m2!3d25.4430305!4d-80.4755181!16s%2Fg%2F1hd_d8lqk'
+    lat: 25.4430305,
+    lng: -80.4755181,
+    dir: 'https://www.google.com/maps/dir//Best+Buy+Liquors,+402+SE+1st+Ave,+Florida+City,+FL+33034/@25.4430305,-80.4755181,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x88d9e0b5c3ca4a81:0xd9dcaec1fa005744!2m2!1d-80.4755181!2d25.4430305!3e0'
   },
   {
     name: 'Aruba Beach Cafe',
@@ -276,9 +276,9 @@ const locations = [
       state: 'FL',
       zip: '33027'
     },
-    lat: 26.0069729,
-    lng: -80.3600007,
-    dir: 'https://www.google.com/maps/place/Total+Wine+%26+More/@26.0069729,-80.3600007,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a6abedc656a1:0xc36b58b01b83e19e!8m2!3d26.0069681!4d-80.3574258!16s%2Fg%2F1th6fmzb'
+    lat: 26.0069681,
+    lng: -80.3574258,
+    dir: 'https://www.google.com/maps/dir//Total+Wine+%26+More,+15980+Pines+Blvd,+Pembroke+Pines,+FL+33027/@26.0069681,-80.3574258,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x88d9a6abedc656a1:0xc36b58b01b83e19e!2m2!1d-80.3574258!2d26.0069681!3e0'
   },
   {
     name: 'Total Wine & More',
@@ -1086,27 +1086,224 @@ const locations = [
   },
 ]
 
+const mapStyles = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      {
+        "color": "#ffeb3b"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#3ccbda"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+]
+
 let map
 
 async function initNautiMap() {
   const container = document.getElementById('nauti-map');
   const center = { lat: 28.3728687, lng: -81.49961773034279 };
-  const zoom = 6;
-  const mapId = 'NAUTI_MAP_ID'
+  const zoom = 7;
+  const mapId = '49aac10364cfc29c';
 
   const { Map } = await google.maps.importLibrary('maps');
   const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+
+  
 
   map = new Map(container, {
     center,
     zoom,
     mapId,
-  })
+  });
 
-  const marker = new AdvancedMarkerElement({
-    map,
-    position: { lat: locations[0].lat, lng: locations[0].lng },
-    title: locations[0].name,
+  locations.forEach((location) => {
+    const pinIcon = document.createElement('img');
+    const pinIconUrl = 'https://images.squarespace-cdn.com/content/v1/61c9f775744ede357d65ddbd/b3aa1969-cea6-414f-a75f-33123cbe4e9c/NautiBeach_M38182-Custom-Map-Assets-v3-01.png';
+
+    pinIcon.src = pinIconUrl;
+
+    new AdvancedMarkerElement({
+      position: { lat: location.lat, lng: location.lng },
+      map,
+      title: location.name,
+      content: pinIcon,
+    })
   })
 }
 
