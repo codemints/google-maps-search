@@ -8,8 +8,21 @@
     <script type="module" src="/main.js"></script>
   </head>
   <body>
-    <div id="nauti-map"></div>
-    <!--AIzaSyDoCaXnSnP_S4z4DHmfcjUECgjzyG4_qPw-->
+    <div class="nauti-custom-map">
+      <div class="nauti-locations">
+        <div class="nauti-locations-search">
+          <h2>Find A Nauti Beach Retailer</h2>
+          <form action="">
+            <input type="text" placeholder="Enter A City">
+            <button type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L486.6 441.4 509.3 464 464 509.3l-22.6-22.6L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            </button>
+          </form>
+        </div>
+        <div id="nauti-locations-list"></div>
+      </div>
+      <div id="nauti-map"></div>
+    </div>
     <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
       ({key: "AIzaSyDoCaXnSnP_S4z4DHmfcjUECgjzyG4_qPw", v: "beta"});</script>
   </body>

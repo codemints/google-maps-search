@@ -6,12 +6,162 @@ body {
   align-items: center;
 }
 
+.nauti-custom-map {
+  --nauti-red: #F9423A;
+  --nauti-blue: #3CCBDA;
+  --nauti-gray: #3D3935;
+  --nauti-tan: #F6EBDB;
+  --font-family: moret, sans-serif;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: var(--nauti-tan);
+  max-width: 1140px;
+  width: 100%;
+  max-height: 600px;
+  margin-inline: auto;
+}
+
 #nauti-map {
-  width: 1000px;
-  height: 800px;
-  background-color: pink;
+  width: 100%;
+  height: 100%;
+  background-color: var(--nauti-blue);
 }
 
 .yNHHyP-marker-view img {
   height: 35px;
+}
+
+.gm-style-iw.gm-style-iw-c {
+  background-color: var(--nauti-tan);
+  padding: 20px !important;
+}
+
+.gm-style .gm-style-iw-tc::after {
+  background: var(--nauti-tan);
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+.nauti__info-window {
+  text-align: center;
+}
+
+.nauti__info-window-logo {
+  max-width: 100px !important;
+}
+
+.nauti__info-window-title {
+  color: var(--nauti-gray);
+  font-family: var(--font-family);
+  font-size: 21px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.nauti__info-window-address {
+  color: var(--nauti-gray);
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.nauti__info-window-directions,
+.nauti__location-directions {
+  display: inline-block;
+  color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--nauti-red);
+  padding: 10px 20px;
+  margin-top: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nauti__info-window-directions:hover,
+.nauti__location-directions:hover {
+  background-color: var(--nauti-gray);
+}
+
+.nauti-locations {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+  max-height: 600px;
+}
+
+.nauti-locations-search {
+  background-color: var(--nauti-red);
+  padding: 20px;
+}
+
+.nauti-locations-search h2 {
+  color: white;
+  font-family: var(--font-family);
+  font-size: 36px;
+  margin: 0;
+}
+
+.nauti-locations-search form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.nauti-locations-search input {
+  flex: 1;
+  padding-inline: 20px;
+}
+
+.nauti-locations-search button {
+  background-color: var(--nauti-gray);
+  height: 48px;
+  width: 48px;
+}
+
+.nauti-locations-search svg {
+  fill: white;
+  aspect-ratio: 1;
+  height: 24px;
+}
+
+.nauti-locations-search :is(
+  input, button
+) {
+  border: none;
+}
+
+#nauti-locations-list {
+  overflow-y: scroll;
+}
+
+.nauti__location-item {
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nauti__location-item:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nauti__location-title {
+  color: var(--nauti-gray);
+  font-size: 28px;
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+.nauti__location-address {
+  color: var(--nauti-gray);
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.nauti__location-directions {
+  font-size: 14px;
 }
