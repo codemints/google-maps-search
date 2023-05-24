@@ -49,9 +49,11 @@ function createMarker(location, markerElement) {
   
   pinIcon.src = pinIconUrl;
   pinIcon.classList.add('nauti__pin-icon');
+
+  const position = new google.maps.LatLng(location.lat, location.lng);
   
   const marker = new markerElement({
-    position: { lat: location.lat, lng: location.lng },
+    position,
     map: nautiMap,
     title: location.name,
     content: pinIcon,
@@ -131,8 +133,18 @@ function handleListClick(location, index) {
   }, 1000);
 }
 
+function handleMapBounds(newLocations) {
+  const bounds = new google.maps.LatLngBounds();
+
+  nautiMarkers.forEach((marker, index) => {
+    const markerLatLng = new google.maps.LatLng(newLocations[index].lat, newLocations[index].lng);
+    bounds.extend(markerLatLng);
+  });
+
+  nautiMap.fitBounds(bounds);
+}
+
 async function updateMap(newLocations) {
-  console.log(newLocations);
   const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
   nautiMap.setZoom(nautiZoom);
@@ -140,10 +152,11 @@ async function updateMap(newLocations) {
   nautiMarkers.length = 0;
   nautiInfoWindows.length = 0;
 
-  newLocations.forEach((location, index) => {
+  newLocations.forEach((location, index, array) => {
     createMarker(location, AdvancedMarkerElement);
     createInfoWindow(location);
     handleInfoWindow(index);
+    handleMapBounds(array);
   })
 }
 
@@ -168,10 +181,11 @@ async function initMap() {
     mapId: nautiMapId,
   });
   
-  locations.forEach((location, index) => {
+  locations.forEach((location, index, array) => {
     createMarker(location, AdvancedMarkerElement);
     createInfoWindow(location);
     handleInfoWindow(index);
+    handleMapBounds(array);
   })
 
   createLocationsList();
