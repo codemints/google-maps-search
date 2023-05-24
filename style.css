@@ -119,6 +119,7 @@ body {
   background-color: var(--nauti-gray);
   height: 48px;
   width: 48px;
+  cursor: pointer;
 }
 
 .nauti-locations-search svg {

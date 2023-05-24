@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <title>Google Maps Search</title>
-    <script type="module" src="/main.js"></script>
+    <!-- <script type="module" src="/main.js"></script> -->
+    <script type="module" src="/map.js"></script>
   </head>
   <body>
     <div class="nauti-custom-map">
       <div class="nauti-locations">
         <div class="nauti-locations-search">
           <h2>Find A Nauti Beach Retailer</h2>
-          <form action="">
-            <input type="text" placeholder="Enter A City">
+          <form name="nautiLocationsFilter">
+            <input type="text" placeholder="City or Business Name">
             <button type="submit">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L486.6 441.4 509.3 464 464 509.3l-22.6-22.6L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
             </button>
